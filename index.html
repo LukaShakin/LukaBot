@@ -136,6 +136,41 @@ header p {
     outline: 3px solid white;
 }
 
+/* ================= POV CAMERA ================= */
+
+.pov-screen {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto 30px;
+    background: #05070c;
+    border: 2px solid #34466e;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.pov-label {
+    padding: 12px;
+    background: #10192d;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.pov-placeholder {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #7f8baa;
+    font-size: 55px;
+}
+
+.pov-placeholder span {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
 /* ================= REMOTE CONTROL ================= */
 
 .remote {
@@ -145,14 +180,14 @@ header p {
 }
 
 .drive-button {
-    width: 110px;
-    min-height: 70px;
+    width: 130px;
+    min-height: 80px;
     margin: 8px;
     border: none;
     border-radius: 15px;
     background: #263b70;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -415,6 +450,10 @@ footer {
         height: 300px;
     }
 
+    .pov-placeholder {
+        height: 250px;
+    }
+
 }
 
 </style>
@@ -438,10 +477,7 @@ footer {
 
 </header>
 
-
 <div class="container">
-
-<!-- STATUS -->
 
 <div class="status">
 
@@ -456,7 +492,6 @@ footer {
     </div>
 
 </div>
-
 
 <!-- MODES -->
 
@@ -486,7 +521,6 @@ footer {
 
 </div>
 
-
 <!-- REMOTE CONTROL -->
 
 <div class="panel" id="remotePanel">
@@ -494,8 +528,25 @@ footer {
     <h2>🎮 Remote Control</h2>
 
     <p class="message">
-        Manually drive LukaBot.
+        Drive LukaBot using the live camera view.
     </p>
+
+    <!-- POV SCREEN -->
+
+    <div class="pov-screen">
+
+        <div class="pov-label">
+            📹 LUKABOT POV
+        </div>
+
+        <div class="pov-placeholder">
+            👀
+            <span>Live camera feed will appear here</span>
+        </div>
+
+    </div>
+
+    <!-- CONTROLS -->
 
     <div class="remote">
 
@@ -523,9 +574,6 @@ footer {
 
         </button>
 
-
-        <!-- TURN BUTTONS -->
-
         <div class="turn-section">
 
             <h3>🔄 TURN</h3>
@@ -552,7 +600,6 @@ footer {
 
         </div>
 
-
         <br>
 
         <button
@@ -570,7 +617,6 @@ footer {
     </p>
 
 </div>
-
 
 <!-- BALL COLLECTOR -->
 
@@ -616,7 +662,6 @@ footer {
 
 </div>
 
-
 <!-- ROBOT ARM -->
 
 <div class="panel" id="armPanel" style="display:none;">
@@ -624,18 +669,16 @@ footer {
     <h2>🦾 ROBOT ARM</h2>
 
     <p class="message">
-        Two-joystick robot arm controller
+        Two-controller robot arm control
     </p>
 
     <div class="arm-controller">
 
         <div class="arm-joysticks">
 
-            <!-- LEFT JOYSTICK -->
-
             <div class="joystick-box">
 
-                <h3>🕹️ LEFT JOYSTICK</h3>
+                <h3>🕹️ LEFT CONTROLLER</h3>
 
                 <div class="joystick">
 
@@ -655,16 +698,11 @@ footer {
 
                 </div>
 
-                <p class="message">Base control</p>
-
             </div>
-
-
-            <!-- RIGHT JOYSTICK -->
 
             <div class="joystick-box">
 
-                <h3>🕹️ RIGHT JOYSTICK</h3>
+                <h3>🕹️ RIGHT CONTROLLER</h3>
 
                 <div class="joystick">
 
@@ -684,14 +722,9 @@ footer {
 
                 </div>
 
-                <p class="message">Arm control</p>
-
             </div>
 
         </div>
-
-
-        <!-- CLAW -->
 
         <div class="claw-section">
 
@@ -709,7 +742,6 @@ footer {
 
         </div>
 
-
         <button
             class="control-button stop arm-stop"
             onclick="stopArm()">
@@ -725,7 +757,6 @@ footer {
     </div>
 
 </div>
-
 
 <!-- FOLLOW MODE -->
 
@@ -767,7 +798,6 @@ footer {
 
 </div>
 
-
 <!-- EMERGENCY STOP -->
 
 <div class="panel">
@@ -785,11 +815,9 @@ footer {
 
 </div>
 
-
 <footer>
     LukaBot © 2026 🤖
 </footer>
-
 
 <script>
 
@@ -810,7 +838,6 @@ function hidePanels() {
     document.getElementById("armPanel").style.display = "none";
     document.getElementById("followPanel").style.display = "none";
 }
-
 
 /* OPEN MODES */
 
@@ -858,7 +885,6 @@ function openFollow(button) {
     "📦 Nothing Attached";
 }
 
-
 /* ROBOT MOVEMENT */
 
 function move(direction) {
@@ -877,7 +903,6 @@ function stopRobot() {
     console.log("Robot stopped");
 }
 
-
 /* ARM */
 
 function armMove(action) {
@@ -893,7 +918,6 @@ function stopArm() {
     document.getElementById("armMessage").textContent =
     "🛑 ARM STOPPED";
 }
-
 
 /* BALL TRACKING */
 
@@ -921,8 +945,7 @@ function stopTracking() {
     "Ball tracking stopped.";
 }
 
-
-/* FOLLOW */
+/* FOLLOW MODE */
 
 function startFollowing() {
 
@@ -935,7 +958,6 @@ function stopFollowing() {
     document.getElementById("followMessage").textContent =
     "Follow mode stopped.";
 }
-
 
 /* EMERGENCY STOP */
 
