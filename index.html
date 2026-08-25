@@ -19,7 +19,7 @@ body {
     color: white;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header {
     background: #10192d;
@@ -56,7 +56,7 @@ header p {
     border-radius: 12px;
 }
 
-/* ================= MAIN ================= */
+/* MAIN */
 
 .container {
     max-width: 1100px;
@@ -64,7 +64,7 @@ header p {
     padding: 20px;
 }
 
-/* ================= STATUS ================= */
+/* STATUS */
 
 .status {
     display: grid;
@@ -88,7 +88,7 @@ header p {
     color: #42f56c;
 }
 
-/* ================= PANELS ================= */
+/* PANELS */
 
 .panel {
     background: #121d35;
@@ -102,7 +102,7 @@ header p {
     margin-top: 0;
 }
 
-/* ================= MODE BUTTONS ================= */
+/* MODE BUTTONS */
 
 .modes {
     display: grid;
@@ -136,32 +136,67 @@ header p {
     outline: 3px solid white;
 }
 
-/* ================= DRIVE REMOTE ================= */
+/* ================= REMOTE CONTROL ================= */
 
 .remote {
     text-align: center;
-    max-width: 400px;
+    max-width: 500px;
     margin: auto;
 }
 
-.remote button {
-    width: 90px;
-    height: 70px;
-    margin: 5px;
+.drive-button {
+    width: 110px;
+    min-height: 70px;
+    margin: 8px;
     border: none;
     border-radius: 15px;
     background: #263b70;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
 }
 
-.remote button:hover {
+.drive-button:hover {
     background: #36569d;
 }
 
-.remote button:active {
+.drive-button:active {
     transform: scale(0.92);
+}
+
+.arrow-big {
+    display: block;
+    font-size: 35px;
+}
+
+/* TURN SECTION */
+
+.turn-section {
+    margin-top: 30px;
+}
+
+.turn-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.turn-button {
+    border: none;
+    border-radius: 15px;
+    padding: 18px 25px;
+    margin: 7px;
+    background: #263b70;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.turn-button:hover {
+    background: #36569d;
+}
+
+.turn-button:active {
+    transform: scale(0.96);
 }
 
 /* ================= ROBOT ARM ================= */
@@ -172,16 +207,12 @@ header p {
     text-align: center;
 }
 
-/* JOYSTICK AREA */
-
 .arm-joysticks {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     margin-top: 30px;
 }
-
-/* JOYSTICK BOX */
 
 .joystick-box {
     background: #0c1426;
@@ -195,33 +226,23 @@ header p {
     font-size: 22px;
 }
 
-/* JOYSTICK */
-
 .joystick {
     display: grid;
     grid-template-columns: 70px 70px 70px;
     grid-template-rows: 70px 70px 70px;
-
     justify-content: center;
     align-items: center;
-
     margin: 20px auto;
 }
-
-/* JOYSTICK BUTTON */
 
 .joy-button {
     width: 65px;
     height: 65px;
-
     border: none;
     border-radius: 15px;
-
     background: #263b70;
     color: white;
-
     font-size: 30px;
-
     cursor: pointer;
 }
 
@@ -232,8 +253,6 @@ header p {
 .joy-button:active {
     transform: scale(0.9);
 }
-
-/* POSITIONS */
 
 .joy-up {
     grid-column: 2;
@@ -248,18 +267,13 @@ header p {
 .joy-center {
     grid-column: 2;
     grid-row: 2;
-
     width: 65px;
     height: 65px;
-
     border-radius: 15px;
-
     background: #344d88;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 22px;
 }
 
@@ -273,7 +287,7 @@ header p {
     grid-row: 3;
 }
 
-/* ================= CLAW ================= */
+/* CLAW */
 
 .claw-section {
     margin-top: 40px;
@@ -286,16 +300,11 @@ header p {
 .claw-button {
     border: none;
     border-radius: 15px;
-
     padding: 18px 35px;
-
     margin: 7px;
-
     background: #263b70;
     color: white;
-
     font-size: 18px;
-
     cursor: pointer;
 }
 
@@ -307,7 +316,7 @@ header p {
     transform: scale(0.96);
 }
 
-/* ================= STOP ================= */
+/* STOP */
 
 .stop {
     background: #a92828 !important;
@@ -322,27 +331,20 @@ header p {
     margin-top: 25px;
 }
 
-/* ================= CAMERA ================= */
+/* CAMERA */
 
 .camera {
     width: 100%;
     max-width: 800px;
     height: 450px;
-
     margin: auto;
-
     background: #05070c;
-
     border: 2px solid #34466e;
-
     border-radius: 15px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #7f8baa;
-
     text-align: center;
 }
 
@@ -350,7 +352,7 @@ header p {
     font-size: 50px;
 }
 
-/* ================= MESSAGES ================= */
+/* MESSAGES */
 
 .message {
     text-align: center;
@@ -358,7 +360,7 @@ header p {
     min-height: 25px;
 }
 
-/* ================= BALL STATUS ================= */
+/* BALL STATUS */
 
 .ball-status {
     text-align: center;
@@ -374,7 +376,7 @@ header p {
     color: #ffcc45;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer {
     text-align: center;
@@ -382,7 +384,7 @@ footer {
     color: #657293;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:700px) {
 
@@ -418,11 +420,7 @@ footer {
 </style>
 </head>
 
-
 <body>
-
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -443,35 +441,24 @@ footer {
 
 <div class="container">
 
-
-<!-- ================= STATUS ================= -->
+<!-- STATUS -->
 
 <div class="status">
 
     <div class="status-box">
-
         <h3>Connection</h3>
-
-        <div class="connected">
-            🟢 Connected
-        </div>
-
+        <div class="connected">🟢 Connected</div>
     </div>
 
     <div class="status-box">
-
         <h3>Battery</h3>
-
-        <div>
-            🔋 87%
-        </div>
-
+        <div>🔋 87%</div>
     </div>
 
 </div>
 
 
-<!-- ================= MODES ================= -->
+<!-- MODES -->
 
 <div class="panel">
 
@@ -479,27 +466,19 @@ footer {
 
     <div class="modes">
 
-        <button
-            class="mode-button active"
-            onclick="openRemote(this)">
+        <button class="mode-button active" onclick="openRemote(this)">
             🎮 Remote Control
         </button>
 
-        <button
-            class="mode-button"
-            onclick="openCollector(this)">
+        <button class="mode-button" onclick="openCollector(this)">
             🏓 Ball Collector
         </button>
 
-        <button
-            class="mode-button"
-            onclick="openArm(this)">
+        <button class="mode-button" onclick="openArm(this)">
             🦾 Robot Arm
         </button>
 
-        <button
-            class="mode-button"
-            onclick="openFollow(this)">
+        <button class="mode-button" onclick="openFollow(this)">
             👣 Follow Mode
         </button>
 
@@ -508,7 +487,7 @@ footer {
 </div>
 
 
-<!-- ================= REMOTE ================= -->
+<!-- REMOTE CONTROL -->
 
 <div class="panel" id="remotePanel">
 
@@ -521,41 +500,67 @@ footer {
     <div class="remote">
 
         <button
+            class="drive-button"
             onmousedown="move('forward')"
             onmouseup="stopRobot()"
             onmouseleave="stopRobot()">
-            ▲
+
+            <span class="arrow-big">▲</span>
+            FORWARD
+
         </button>
 
         <br>
 
         <button
-            onmousedown="move('left')"
-            onmouseup="stopRobot()"
-            onmouseleave="stopRobot()">
-            ◀
-        </button>
-
-        <button
-            class="stop"
-            onclick="stopRobot()">
-            ■
-        </button>
-
-        <button
-            onmousedown="move('right')"
-            onmouseup="stopRobot()"
-            onmouseleave="stopRobot()">
-            ▶
-        </button>
-
-        <br>
-
-        <button
+            class="drive-button"
             onmousedown="move('backward')"
             onmouseup="stopRobot()"
             onmouseleave="stopRobot()">
-            ▼
+
+            <span class="arrow-big">▼</span>
+            BACK
+
+        </button>
+
+
+        <!-- TURN BUTTONS -->
+
+        <div class="turn-section">
+
+            <h3>🔄 TURN</h3>
+
+            <button
+                class="turn-button"
+                onmousedown="move('turn left')"
+                onmouseup="stopRobot()"
+                onmouseleave="stopRobot()">
+
+                ◀ TURN LEFT
+
+            </button>
+
+            <button
+                class="turn-button"
+                onmousedown="move('turn right')"
+                onmouseup="stopRobot()"
+                onmouseleave="stopRobot()">
+
+                TURN RIGHT ▶
+
+            </button>
+
+        </div>
+
+
+        <br>
+
+        <button
+            class="control-button stop"
+            onclick="stopRobot()">
+
+            🛑 STOP
+
         </button>
 
     </div>
@@ -567,12 +572,9 @@ footer {
 </div>
 
 
-<!-- ================= BALL COLLECTOR ================= -->
+<!-- BALL COLLECTOR -->
 
-<div
-    class="panel"
-    id="collectorPanel"
-    style="display:none;">
+<div class="panel" id="collectorPanel" style="display:none;">
 
     <h2>🏓 Automatic Ball Collector</h2>
 
@@ -583,38 +585,26 @@ footer {
     <div class="camera">
 
         <div>
-
             <span>📹</span>
-
             <br><br>
-
             Camera feed will appear here
-
         </div>
 
     </div>
 
-    <div
-        class="ball-status not-detected"
-        id="ballStatus">
-
+    <div class="ball-status not-detected" id="ballStatus">
         ⚪ Searching for ping-pong ball...
-
     </div>
 
     <br>
 
     <div style="text-align:center;">
 
-        <button
-            class="control-button"
-            onclick="startTracking()">
+        <button class="control-button" onclick="startTracking()">
             ▶️ Start Tracking
         </button>
 
-        <button
-            class="control-button stop"
-            onclick="stopTracking()">
+        <button class="control-button stop" onclick="stopTracking()">
             🛑 Stop Tracking
         </button>
 
@@ -627,12 +617,9 @@ footer {
 </div>
 
 
-<!-- ================= ROBOT ARM ================= -->
+<!-- ROBOT ARM -->
 
-<div
-    class="panel"
-    id="armPanel"
-    style="display:none;">
+<div class="panel" id="armPanel" style="display:none;">
 
     <h2>🦾 ROBOT ARM</h2>
 
@@ -640,16 +627,11 @@ footer {
         Two-joystick robot arm controller
     </p>
 
-
     <div class="arm-controller">
-
-
-        <!-- TWO JOYSTICKS -->
 
         <div class="arm-joysticks">
 
-
-            <!-- LEFT -->
+            <!-- LEFT JOYSTICK -->
 
             <div class="joystick-box">
 
@@ -657,44 +639,28 @@ footer {
 
                 <div class="joystick">
 
-                    <button
-                        class="joy-button joy-up"
-                        onclick="armMove('left joystick up')">
-                        ▲
-                    </button>
+                    <button class="joy-button joy-up"
+                    onclick="armMove('left joystick up')">▲</button>
 
-                    <button
-                        class="joy-button joy-left"
-                        onclick="armMove('base left')">
-                        ◀
-                    </button>
+                    <button class="joy-button joy-left"
+                    onclick="armMove('base left')">◀</button>
 
-                    <div class="joy-center">
-                        ●
-                    </div>
+                    <div class="joy-center">●</div>
 
-                    <button
-                        class="joy-button joy-right"
-                        onclick="armMove('base right')">
-                        ▶
-                    </button>
+                    <button class="joy-button joy-right"
+                    onclick="armMove('base right')">▶</button>
 
-                    <button
-                        class="joy-button joy-down"
-                        onclick="armMove('left joystick down')">
-                        ▼
-                    </button>
+                    <button class="joy-button joy-down"
+                    onclick="armMove('left joystick down')">▼</button>
 
                 </div>
 
-                <p class="message">
-                    Base control
-                </p>
+                <p class="message">Base control</p>
 
             </div>
 
 
-            <!-- RIGHT -->
+            <!-- RIGHT JOYSTICK -->
 
             <div class="joystick-box">
 
@@ -702,42 +668,25 @@ footer {
 
                 <div class="joystick">
 
-                    <button
-                        class="joy-button joy-up"
-                        onclick="armMove('arm up')">
-                        ▲
-                    </button>
+                    <button class="joy-button joy-up"
+                    onclick="armMove('arm up')">▲</button>
 
-                    <button
-                        class="joy-button joy-left"
-                        onclick="armMove('arm left')">
-                        ◀
-                    </button>
+                    <button class="joy-button joy-left"
+                    onclick="armMove('arm left')">◀</button>
 
-                    <div class="joy-center">
-                        ●
-                    </div>
+                    <div class="joy-center">●</div>
 
-                    <button
-                        class="joy-button joy-right"
-                        onclick="armMove('arm right')">
-                        ▶
-                    </button>
+                    <button class="joy-button joy-right"
+                    onclick="armMove('arm right')">▶</button>
 
-                    <button
-                        class="joy-button joy-down"
-                        onclick="armMove('arm down')">
-                        ▼
-                    </button>
+                    <button class="joy-button joy-down"
+                    onclick="armMove('arm down')">▼</button>
 
                 </div>
 
-                <p class="message">
-                    Arm control
-                </p>
+                <p class="message">Arm control</p>
 
             </div>
-
 
         </div>
 
@@ -748,26 +697,18 @@ footer {
 
             <h3>✋ CLAW</h3>
 
-            <button
-                class="claw-button"
-                onclick="armMove('open claw')">
-
+            <button class="claw-button"
+            onclick="armMove('open claw')">
                 ✋ OPEN
-
             </button>
 
-            <button
-                class="claw-button"
-                onclick="armMove('close claw')">
-
+            <button class="claw-button"
+            onclick="armMove('close claw')">
                 ✊ CLOSE
-
             </button>
 
         </div>
 
-
-        <!-- STOP -->
 
         <button
             class="control-button stop arm-stop"
@@ -777,27 +718,18 @@ footer {
 
         </button>
 
-
-        <p
-            class="message"
-            id="armMessage">
-
+        <p class="message" id="armMessage">
             Arm ready.
-
         </p>
-
 
     </div>
 
 </div>
 
 
-<!-- ================= FOLLOW ================= -->
+<!-- FOLLOW MODE -->
 
-<div
-    class="panel"
-    id="followPanel"
-    style="display:none;">
+<div class="panel" id="followPanel" style="display:none;">
 
     <h2>👣 Follow Mode</h2>
 
@@ -808,13 +740,9 @@ footer {
     <div class="camera">
 
         <div>
-
             <span>📹</span>
-
             <br><br>
-
             Follow camera feed
-
         </div>
 
     </div>
@@ -823,36 +751,24 @@ footer {
 
     <div style="text-align:center;">
 
-        <button
-            class="control-button"
-            onclick="startFollowing()">
-
+        <button class="control-button" onclick="startFollowing()">
             ▶️ Start Following
-
         </button>
 
-        <button
-            class="control-button stop"
-            onclick="stopFollowing()">
-
+        <button class="control-button stop" onclick="stopFollowing()">
             🛑 Stop Following
-
         </button>
 
     </div>
 
-    <p
-        class="message"
-        id="followMessage">
-
+    <p class="message" id="followMessage">
         Follow mode ready.
-
     </p>
 
 </div>
 
 
-<!-- ================= EMERGENCY STOP ================= -->
+<!-- EMERGENCY STOP -->
 
 <div class="panel">
 
@@ -867,230 +783,171 @@ footer {
 
 </div>
 
-
 </div>
 
 
 <footer>
-
     LukaBot © 2026 🤖
-
 </footer>
 
 
 <script>
 
-/* ================= MODE SYSTEM ================= */
+/* MODE SYSTEM */
 
 function selectMode(button) {
 
-    document
-        .querySelectorAll(".modes .mode-button")
-        .forEach(btn => {
-
-            btn.classList.remove("active");
-
-        });
+    document.querySelectorAll(".modes .mode-button")
+    .forEach(btn => btn.classList.remove("active"));
 
     button.classList.add("active");
 }
 
-
 function hidePanels() {
 
-    document.getElementById("remotePanel")
-        .style.display = "none";
-
-    document.getElementById("collectorPanel")
-        .style.display = "none";
-
-    document.getElementById("armPanel")
-        .style.display = "none";
-
-    document.getElementById("followPanel")
-        .style.display = "none";
+    document.getElementById("remotePanel").style.display = "none";
+    document.getElementById("collectorPanel").style.display = "none";
+    document.getElementById("armPanel").style.display = "none";
+    document.getElementById("followPanel").style.display = "none";
 }
 
 
-/* ================= REMOTE ================= */
+/* OPEN MODES */
 
 function openRemote(button) {
 
     selectMode(button);
-
     hidePanels();
 
-    document.getElementById("remotePanel")
-        .style.display = "block";
+    document.getElementById("remotePanel").style.display = "block";
 
-    document.getElementById("attachment")
-        .textContent =
-        "📦 Nothing Attached";
+    document.getElementById("attachment").textContent =
+    "📦 Nothing Attached";
 }
-
-
-/* ================= COLLECTOR ================= */
 
 function openCollector(button) {
 
     selectMode(button);
-
     hidePanels();
 
-    document.getElementById("collectorPanel")
-        .style.display = "block";
+    document.getElementById("collectorPanel").style.display = "block";
 
-    document.getElementById("attachment")
-        .textContent =
-        "📦 Ball Collector";
+    document.getElementById("attachment").textContent =
+    "📦 Ball Collector";
 }
-
-
-/* ================= ARM ================= */
 
 function openArm(button) {
 
     selectMode(button);
-
     hidePanels();
 
-    document.getElementById("armPanel")
-        .style.display = "block";
+    document.getElementById("armPanel").style.display = "block";
 
-    document.getElementById("attachment")
-        .textContent =
-        "📦 Robot Arm";
+    document.getElementById("attachment").textContent =
+    "📦 Robot Arm";
 }
-
-
-/* ================= FOLLOW ================= */
 
 function openFollow(button) {
 
     selectMode(button);
-
     hidePanels();
 
-    document.getElementById("followPanel")
-        .style.display = "block";
+    document.getElementById("followPanel").style.display = "block";
 
-    document.getElementById("attachment")
-        .textContent =
-        "📦 Nothing Attached";
+    document.getElementById("attachment").textContent =
+    "📦 Nothing Attached";
 }
 
 
-/* ================= DRIVE ================= */
+/* ROBOT MOVEMENT */
 
 function move(direction) {
 
-    document.getElementById("remoteMessage")
-        .textContent =
-        "Moving " + direction + " 🚗";
+    document.getElementById("remoteMessage").textContent =
+    "Moving: " + direction + " 🤖";
 
-    console.log("Moving:", direction);
+    console.log("Robot:", direction);
 }
-
 
 function stopRobot() {
 
-    document.getElementById("remoteMessage")
-        .textContent =
-        "Stopped 🛑";
+    document.getElementById("remoteMessage").textContent =
+    "Stopped 🛑";
 
     console.log("Robot stopped");
 }
 
 
-/* ================= ARM ================= */
+/* ARM */
 
 function armMove(action) {
 
-    document.getElementById("armMessage")
-        .textContent =
-        "Arm command: " + action;
+    document.getElementById("armMessage").textContent =
+    "Arm command: " + action;
 
-    console.log("Arm command:", action);
+    console.log("Arm:", action);
 }
-
 
 function stopArm() {
 
-    document.getElementById("armMessage")
-        .textContent =
-        "🛑 ARM STOPPED";
-
-    console.log("Arm stopped");
+    document.getElementById("armMessage").textContent =
+    "🛑 ARM STOPPED";
 }
 
 
-/* ================= BALL TRACKING ================= */
+/* BALL TRACKING */
 
 function startTracking() {
 
-    document.getElementById("ballStatus")
-        .className =
-        "ball-status detected";
+    document.getElementById("ballStatus").className =
+    "ball-status detected";
 
-    document.getElementById("ballStatus")
-        .textContent =
-        "🟢 Ball tracking started";
+    document.getElementById("ballStatus").textContent =
+    "🟢 Ball tracking started";
 
-    document.getElementById("collectorMessage")
-        .textContent =
-        "Searching for white ping-pong balls... 🏓";
+    document.getElementById("collectorMessage").textContent =
+    "Searching for white ping-pong balls... 🏓";
 }
-
 
 function stopTracking() {
 
-    document.getElementById("ballStatus")
-        .className =
-        "ball-status not-detected";
+    document.getElementById("ballStatus").className =
+    "ball-status not-detected";
 
-    document.getElementById("ballStatus")
-        .textContent =
-        "⚪ Tracking stopped";
+    document.getElementById("ballStatus").textContent =
+    "⚪ Tracking stopped";
 
-    document.getElementById("collectorMessage")
-        .textContent =
-        "Ball tracking stopped.";
+    document.getElementById("collectorMessage").textContent =
+    "Ball tracking stopped.";
 }
 
 
-/* ================= FOLLOW ================= */
+/* FOLLOW */
 
 function startFollowing() {
 
-    document.getElementById("followMessage")
-        .textContent =
-        "🟢 Following started!";
+    document.getElementById("followMessage").textContent =
+    "🟢 Following started!";
 }
-
 
 function stopFollowing() {
 
-    document.getElementById("followMessage")
-        .textContent =
-        "Follow mode stopped.";
+    document.getElementById("followMessage").textContent =
+    "Follow mode stopped.";
 }
 
 
-/* ================= EMERGENCY STOP ================= */
+/* EMERGENCY STOP */
 
 function emergencyStop() {
 
     stopRobot();
-
     stopArm();
-
     stopTracking();
-
     stopFollowing();
 
-    document.getElementById("remoteMessage")
-        .textContent =
-        "🛑 EMERGENCY STOP ACTIVATED";
+    document.getElementById("remoteMessage").textContent =
+    "🛑 EMERGENCY STOP ACTIVATED";
 
     console.log("EMERGENCY STOP");
 }
