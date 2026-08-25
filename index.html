@@ -19,8 +19,6 @@ body {
     color: white;
 }
 
-/* HEADER */
-
 header {
     background: #10192d;
     border-bottom: 2px solid #26385f;
@@ -44,8 +42,6 @@ header p {
     margin: 8px 0 0;
 }
 
-/* ATTACHMENT */
-
 .attachment-top {
     position: absolute;
     top: 10px;
@@ -56,15 +52,11 @@ header p {
     border-radius: 12px;
 }
 
-/* MAIN */
-
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 20px;
 }
-
-/* STATUS */
 
 .status {
     display: grid;
@@ -88,8 +80,6 @@ header p {
     color: #42f56c;
 }
 
-/* PANELS */
-
 .panel {
     background: #121d35;
     border-radius: 20px;
@@ -101,8 +91,6 @@ header p {
     text-align: center;
     margin-top: 0;
 }
-
-/* MODE BUTTONS */
 
 .modes {
     display: grid;
@@ -136,7 +124,7 @@ header p {
     outline: 3px solid white;
 }
 
-/* ================= POV CAMERA ================= */
+/* CAMERA / POV */
 
 .pov-screen {
     width: 100%;
@@ -171,7 +159,7 @@ header p {
     font-size: 18px;
 }
 
-/* ================= REMOTE CONTROL ================= */
+/* REMOTE */
 
 .remote {
     text-align: center;
@@ -191,11 +179,17 @@ header p {
     cursor: pointer;
 }
 
-.drive-button:hover {
+.drive-button:hover,
+.turn-button:hover,
+.claw-button:hover,
+.joy-button:hover {
     background: #36569d;
 }
 
-.drive-button:active {
+.drive-button:active,
+.turn-button:active,
+.claw-button:active,
+.joy-button:active {
     transform: scale(0.92);
 }
 
@@ -203,8 +197,6 @@ header p {
     display: block;
     font-size: 35px;
 }
-
-/* TURN SECTION */
 
 .turn-section {
     margin-top: 30px;
@@ -226,15 +218,7 @@ header p {
     cursor: pointer;
 }
 
-.turn-button:hover {
-    background: #36569d;
-}
-
-.turn-button:active {
-    transform: scale(0.96);
-}
-
-/* ================= ROBOT ARM ================= */
+/* ROBOT ARM */
 
 .arm-controller {
     max-width: 900px;
@@ -279,14 +263,6 @@ header p {
     color: white;
     font-size: 30px;
     cursor: pointer;
-}
-
-.joy-button:hover {
-    background: #36569d;
-}
-
-.joy-button:active {
-    transform: scale(0.9);
 }
 
 .joy-up {
@@ -343,16 +319,6 @@ header p {
     cursor: pointer;
 }
 
-.claw-button:hover {
-    background: #36569d;
-}
-
-.claw-button:active {
-    transform: scale(0.96);
-}
-
-/* STOP */
-
 .stop {
     background: #a92828 !important;
 }
@@ -365,8 +331,6 @@ header p {
     width: 100%;
     margin-top: 25px;
 }
-
-/* CAMERA */
 
 .camera {
     width: 100%;
@@ -387,15 +351,11 @@ header p {
     font-size: 50px;
 }
 
-/* MESSAGES */
-
 .message {
     text-align: center;
     color: #9ca9c7;
     min-height: 25px;
 }
-
-/* BALL STATUS */
 
 .ball-status {
     text-align: center;
@@ -411,15 +371,11 @@ header p {
     color: #ffcc45;
 }
 
-/* FOOTER */
-
 footer {
     text-align: center;
     padding: 25px;
     color: #657293;
 }
-
-/* MOBILE */
 
 @media(max-width:700px) {
 
@@ -446,14 +402,10 @@ footer {
         gap: 25px;
     }
 
-    .camera {
+    .camera,
+    .pov-placeholder {
         height: 300px;
     }
-
-    .pov-placeholder {
-        height: 250px;
-    }
-
 }
 
 </style>
@@ -463,361 +415,443 @@ footer {
 
 <header>
 
-    <div class="header-content">
+<div class="header-content">
 
-        <h1>🤖 LukaBot</h1>
+<h1>🤖 LukaBot</h1>
 
-        <p>Smart Robot Control Center</p>
+<p>Smart Robot Control Center</p>
 
-        <div class="attachment-top" id="attachment">
-            📦 Nothing Attached
-        </div>
+<div class="attachment-top" id="attachment">
+📦 Nothing Attached
+</div>
 
-    </div>
+</div>
 
 </header>
 
 <div class="container">
 
+<!-- STATUS -->
+
 <div class="status">
 
-    <div class="status-box">
-        <h3>Connection</h3>
-        <div class="connected">🟢 Connected</div>
-    </div>
+<div class="status-box">
+<h3>Connection</h3>
+<div class="connected">🟢 Connected</div>
+</div>
 
-    <div class="status-box">
-        <h3>Battery</h3>
-        <div>🔋 87%</div>
-    </div>
+<div class="status-box">
+<h3>Battery</h3>
+<div>🔋 87%</div>
+</div>
 
 </div>
+
 
 <!-- MODES -->
 
 <div class="panel">
 
-    <h2>🤖 Robot Modes</h2>
+<h2>🤖 Robot Modes</h2>
 
-    <div class="modes">
+<div class="modes">
 
-        <button class="mode-button active" onclick="openRemote(this)">
-            🎮 Remote Control
-        </button>
+<button class="mode-button active" onclick="openRemote(this)">
+🎮 Remote Control
+</button>
 
-        <button class="mode-button" onclick="openCollector(this)">
-            🏓 Ball Collector
-        </button>
+<button class="mode-button" onclick="openCollector(this)">
+🏓 Ball Collector
+</button>
 
-        <button class="mode-button" onclick="openArm(this)">
-            🦾 Robot Arm
-        </button>
+<button class="mode-button" onclick="openArm(this)">
+🦾 Robot Arm
+</button>
 
-        <button class="mode-button" onclick="openFollow(this)">
-            👣 Follow Mode
-        </button>
-
-    </div>
+<button class="mode-button" onclick="openFollow(this)">
+👣 Follow Mode
+</button>
 
 </div>
 
-<!-- REMOTE CONTROL -->
+</div>
+
+
+<!-- REMOTE -->
 
 <div class="panel" id="remotePanel">
 
-    <h2>🎮 Remote Control</h2>
+<h2>🎮 Remote Control</h2>
 
-    <p class="message">
-        Drive LukaBot using the live camera view.
-    </p>
+<p class="message">
+Drive LukaBot using the live camera view.
+</p>
 
-    <!-- POV SCREEN -->
+<div class="pov-screen">
 
-    <div class="pov-screen">
+<div class="pov-label">
+📹 LUKABOT POV
+</div>
 
-        <div class="pov-label">
-            📹 LUKABOT POV
-        </div>
-
-        <div class="pov-placeholder">
-            👀
-            <span>Live camera feed will appear here</span>
-        </div>
-
-    </div>
-
-    <!-- CONTROLS -->
-
-    <div class="remote">
-
-        <button
-            class="drive-button"
-            onmousedown="move('forward')"
-            onmouseup="stopRobot()"
-            onmouseleave="stopRobot()">
-
-            <span class="arrow-big">▲</span>
-            FORWARD
-
-        </button>
-
-        <br>
-
-        <button
-            class="drive-button"
-            onmousedown="move('backward')"
-            onmouseup="stopRobot()"
-            onmouseleave="stopRobot()">
-
-            <span class="arrow-big">▼</span>
-            BACK
-
-        </button>
-
-        <div class="turn-section">
-
-            <h3>🔄 TURN</h3>
-
-            <button
-                class="turn-button"
-                onmousedown="move('turn left')"
-                onmouseup="stopRobot()"
-                onmouseleave="stopRobot()">
-
-                ◀ TURN LEFT
-
-            </button>
-
-            <button
-                class="turn-button"
-                onmousedown="move('turn right')"
-                onmouseup="stopRobot()"
-                onmouseleave="stopRobot()">
-
-                TURN RIGHT ▶
-
-            </button>
-
-        </div>
-
-        <br>
-
-        <button
-            class="control-button stop"
-            onclick="stopRobot()">
-
-            🛑 STOP
-
-        </button>
-
-    </div>
-
-    <p class="message" id="remoteMessage">
-        Ready!
-    </p>
+<div class="pov-placeholder">
+👀
+<span>Live camera feed will appear here</span>
+</div>
 
 </div>
+
+<div class="remote">
+
+<button
+class="drive-button"
+onmousedown="move('forward')"
+onmouseup="stopRobot()"
+onmouseleave="stopRobot()">
+
+<span class="arrow-big">▲</span>
+FORWARD
+
+</button>
+
+<br>
+
+<button
+class="drive-button"
+onmousedown="move('backward')"
+onmouseup="stopRobot()"
+onmouseleave="stopRobot()">
+
+<span class="arrow-big">▼</span>
+BACK
+
+</button>
+
+<div class="turn-section">
+
+<h3>🔄 TURN</h3>
+
+<button
+class="turn-button"
+onmousedown="move('turn left')"
+onmouseup="stopRobot()"
+onmouseleave="stopRobot()">
+
+◀ TURN LEFT
+
+</button>
+
+<button
+class="turn-button"
+onmousedown="move('turn right')"
+onmouseup="stopRobot()"
+onmouseleave="stopRobot()">
+
+TURN RIGHT ▶
+
+</button>
+
+</div>
+
+<br>
+
+<button
+class="control-button stop"
+onclick="stopRobot()">
+
+🛑 STOP
+
+</button>
+
+</div>
+
+<p class="message" id="remoteMessage">
+Ready!
+</p>
+
+</div>
+
 
 <!-- BALL COLLECTOR -->
 
 <div class="panel" id="collectorPanel" style="display:none;">
 
-    <h2>🏓 Automatic Ball Collector</h2>
+<h2>🏓 Automatic Ball Collector</h2>
 
-    <p class="message">
-        LukaBot will search for white ping-pong balls.
-    </p>
+<p class="message">
+LukaBot will search for white ping-pong balls.
+</p>
 
-    <div class="camera">
+<div class="camera">
 
-        <div>
-            <span>📹</span>
-            <br><br>
-            Camera feed will appear here
-        </div>
-
-    </div>
-
-    <div class="ball-status not-detected" id="ballStatus">
-        ⚪ Searching for ping-pong ball...
-    </div>
-
-    <br>
-
-    <div style="text-align:center;">
-
-        <button class="control-button" onclick="startTracking()">
-            ▶️ Start Tracking
-        </button>
-
-        <button class="control-button stop" onclick="stopTracking()">
-            🛑 Stop Tracking
-        </button>
-
-    </div>
-
-    <p class="message" id="collectorMessage">
-        Ready to search.
-    </p>
+<div>
+<span>📹</span>
+<br><br>
+Camera feed will appear here
+</div>
 
 </div>
+
+<div class="ball-status not-detected" id="ballStatus">
+⚪ Searching for ping-pong ball...
+</div>
+
+<br>
+
+<div style="text-align:center;">
+
+<button class="control-button" onclick="startTracking()">
+▶️ Start Tracking
+</button>
+
+<button class="control-button stop" onclick="stopTracking()">
+🛑 Stop Tracking
+</button>
+
+</div>
+
+<p class="message" id="collectorMessage">
+Ready to search.
+</p>
+
+</div>
+
 
 <!-- ROBOT ARM -->
 
 <div class="panel" id="armPanel" style="display:none;">
 
-    <h2>🦾 ROBOT ARM</h2>
+<h2>🦾 ROBOT ARM</h2>
 
-    <p class="message">
-        Two-controller robot arm control
-    </p>
+<p class="message">
+Control the arm while watching LukaBot's camera.
+</p>
 
-    <div class="arm-controller">
 
-        <div class="arm-joysticks">
+<!-- ARM POV SCREEN -->
 
-            <div class="joystick-box">
+<div class="pov-screen">
 
-                <h3>🕹️ LEFT CONTROLLER</h3>
+<div class="pov-label">
+📹 LUKABOT ARM POV
+</div>
 
-                <div class="joystick">
-
-                    <button class="joy-button joy-up"
-                    onclick="armMove('left joystick up')">▲</button>
-
-                    <button class="joy-button joy-left"
-                    onclick="armMove('base left')">◀</button>
-
-                    <div class="joy-center">●</div>
-
-                    <button class="joy-button joy-right"
-                    onclick="armMove('base right')">▶</button>
-
-                    <button class="joy-button joy-down"
-                    onclick="armMove('left joystick down')">▼</button>
-
-                </div>
-
-            </div>
-
-            <div class="joystick-box">
-
-                <h3>🕹️ RIGHT CONTROLLER</h3>
-
-                <div class="joystick">
-
-                    <button class="joy-button joy-up"
-                    onclick="armMove('arm up')">▲</button>
-
-                    <button class="joy-button joy-left"
-                    onclick="armMove('arm left')">◀</button>
-
-                    <div class="joy-center">●</div>
-
-                    <button class="joy-button joy-right"
-                    onclick="armMove('arm right')">▶</button>
-
-                    <button class="joy-button joy-down"
-                    onclick="armMove('arm down')">▼</button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="claw-section">
-
-            <h3>✋ CLAW</h3>
-
-            <button class="claw-button"
-            onclick="armMove('open claw')">
-                ✋ OPEN
-            </button>
-
-            <button class="claw-button"
-            onclick="armMove('close claw')">
-                ✊ CLOSE
-            </button>
-
-        </div>
-
-        <button
-            class="control-button stop arm-stop"
-            onclick="stopArm()">
-
-            🛑 STOP ARM
-
-        </button>
-
-        <p class="message" id="armMessage">
-            Arm ready.
-        </p>
-
-    </div>
+<div class="pov-placeholder">
+👀
+<span>Arm camera feed will appear here</span>
+</div>
 
 </div>
 
-<!-- FOLLOW MODE -->
+
+<div class="arm-controller">
+
+<div class="arm-joysticks">
+
+
+<!-- LEFT -->
+
+<div class="joystick-box">
+
+<h3>🕹️ LEFT CONTROLLER</h3>
+
+<div class="joystick">
+
+<button
+class="joy-button joy-up"
+onclick="armMove('left controller up')">
+▲
+</button>
+
+<button
+class="joy-button joy-left"
+onclick="armMove('base left')">
+◀
+</button>
+
+<div class="joy-center">
+●
+</div>
+
+<button
+class="joy-button joy-right"
+onclick="armMove('base right')">
+▶
+</button>
+
+<button
+class="joy-button joy-down"
+onclick="armMove('left controller down')">
+▼
+</button>
+
+</div>
+
+<p class="message">
+Base control
+</p>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<div class="joystick-box">
+
+<h3>🕹️ RIGHT CONTROLLER</h3>
+
+<div class="joystick">
+
+<button
+class="joy-button joy-up"
+onclick="armMove('arm up')">
+▲
+</button>
+
+<button
+class="joy-button joy-left"
+onclick="armMove('arm left')">
+◀
+</button>
+
+<div class="joy-center">
+●
+</div>
+
+<button
+class="joy-button joy-right"
+onclick="armMove('arm right')">
+▶
+</button>
+
+<button
+class="joy-button joy-down"
+onclick="armMove('arm down')">
+▼
+</button>
+
+</div>
+
+<p class="message">
+Arm movement
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CLAW -->
+
+<div class="claw-section">
+
+<h3>✋ CLAW</h3>
+
+<button
+class="claw-button"
+onclick="armMove('open claw')">
+
+✋ OPEN
+
+</button>
+
+<button
+class="claw-button"
+onclick="armMove('close claw')">
+
+✊ CLOSE
+
+</button>
+
+</div>
+
+
+<button
+class="control-button stop arm-stop"
+onclick="stopArm()">
+
+🛑 STOP ARM
+
+</button>
+
+<p class="message" id="armMessage">
+Arm ready.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- FOLLOW -->
 
 <div class="panel" id="followPanel" style="display:none;">
 
-    <h2>👣 Follow Mode</h2>
+<h2>👣 Follow Mode</h2>
 
-    <p class="message">
-        LukaBot will automatically follow you.
-    </p>
+<p class="message">
+LukaBot will automatically follow you.
+</p>
 
-    <div class="camera">
+<div class="camera">
 
-        <div>
-            <span>📹</span>
-            <br><br>
-            Follow camera feed
-        </div>
-
-    </div>
-
-    <br>
-
-    <div style="text-align:center;">
-
-        <button class="control-button" onclick="startFollowing()">
-            ▶️ Start Following
-        </button>
-
-        <button class="control-button stop" onclick="stopFollowing()">
-            🛑 Stop Following
-        </button>
-
-    </div>
-
-    <p class="message" id="followMessage">
-        Follow mode ready.
-    </p>
+<div>
+<span>📹</span>
+<br><br>
+Follow camera feed
+</div>
 
 </div>
 
-<!-- EMERGENCY STOP -->
+<br>
+
+<div style="text-align:center;">
+
+<button
+class="control-button"
+onclick="startFollowing()">
+
+▶️ Start Following
+
+</button>
+
+<button
+class="control-button stop"
+onclick="stopFollowing()">
+
+🛑 Stop Following
+
+</button>
+
+</div>
+
+<p class="message" id="followMessage">
+Follow mode ready.
+</p>
+
+</div>
+
+
+<!-- EMERGENCY -->
 
 <div class="panel">
 
-    <button
-        class="mode-button stop"
-        style="width:100%;"
-        onclick="emergencyStop()">
+<button
+class="mode-button stop"
+style="width:100%;"
+onclick="emergencyStop()">
 
-        🛑 EMERGENCY STOP
+🛑 EMERGENCY STOP
 
-    </button>
+</button>
 
 </div>
 
 </div>
 
 <footer>
-    LukaBot © 2026 🤖
+LukaBot © 2026 🤖
 </footer>
+
 
 <script>
 
@@ -825,153 +859,191 @@ footer {
 
 function selectMode(button) {
 
-    document.querySelectorAll(".modes .mode-button")
-    .forEach(btn => btn.classList.remove("active"));
+document.querySelectorAll(".modes .mode-button")
+.forEach(btn => btn.classList.remove("active"));
 
-    button.classList.add("active");
+button.classList.add("active");
+
 }
 
 function hidePanels() {
 
-    document.getElementById("remotePanel").style.display = "none";
-    document.getElementById("collectorPanel").style.display = "none";
-    document.getElementById("armPanel").style.display = "none";
-    document.getElementById("followPanel").style.display = "none";
+document.getElementById("remotePanel").style.display = "none";
+
+document.getElementById("collectorPanel").style.display = "none";
+
+document.getElementById("armPanel").style.display = "none";
+
+document.getElementById("followPanel").style.display = "none";
+
 }
 
-/* OPEN MODES */
+
+/* MODES */
 
 function openRemote(button) {
 
-    selectMode(button);
-    hidePanels();
+selectMode(button);
 
-    document.getElementById("remotePanel").style.display = "block";
+hidePanels();
 
-    document.getElementById("attachment").textContent =
-    "📦 Nothing Attached";
+document.getElementById("remotePanel").style.display = "block";
+
+document.getElementById("attachment").textContent =
+"📦 Nothing Attached";
+
 }
+
 
 function openCollector(button) {
 
-    selectMode(button);
-    hidePanels();
+selectMode(button);
 
-    document.getElementById("collectorPanel").style.display = "block";
+hidePanels();
 
-    document.getElementById("attachment").textContent =
-    "📦 Ball Collector";
+document.getElementById("collectorPanel").style.display = "block";
+
+document.getElementById("attachment").textContent =
+"📦 Ball Collector";
+
 }
+
 
 function openArm(button) {
 
-    selectMode(button);
-    hidePanels();
+selectMode(button);
 
-    document.getElementById("armPanel").style.display = "block";
+hidePanels();
 
-    document.getElementById("attachment").textContent =
-    "📦 Robot Arm";
+document.getElementById("armPanel").style.display = "block";
+
+document.getElementById("attachment").textContent =
+"📦 Robot Arm";
+
 }
+
 
 function openFollow(button) {
 
-    selectMode(button);
-    hidePanels();
+selectMode(button);
 
-    document.getElementById("followPanel").style.display = "block";
+hidePanels();
 
-    document.getElementById("attachment").textContent =
-    "📦 Nothing Attached";
+document.getElementById("followPanel").style.display = "block";
+
+document.getElementById("attachment").textContent =
+"📦 Nothing Attached";
+
 }
 
-/* ROBOT MOVEMENT */
+
+/* DRIVING */
 
 function move(direction) {
 
-    document.getElementById("remoteMessage").textContent =
-    "Moving: " + direction + " 🤖";
+document.getElementById("remoteMessage").textContent =
+"Moving: " + direction + " 🤖";
 
-    console.log("Robot:", direction);
+console.log("Robot:", direction);
+
 }
+
 
 function stopRobot() {
 
-    document.getElementById("remoteMessage").textContent =
-    "Stopped 🛑";
+document.getElementById("remoteMessage").textContent =
+"Stopped 🛑";
 
-    console.log("Robot stopped");
+console.log("Robot stopped");
+
 }
+
 
 /* ARM */
 
 function armMove(action) {
 
-    document.getElementById("armMessage").textContent =
-    "Arm command: " + action;
+document.getElementById("armMessage").textContent =
+"Arm command: " + action;
 
-    console.log("Arm:", action);
+console.log("Arm:", action);
+
 }
+
 
 function stopArm() {
 
-    document.getElementById("armMessage").textContent =
-    "🛑 ARM STOPPED";
+document.getElementById("armMessage").textContent =
+"🛑 ARM STOPPED";
+
 }
+
 
 /* BALL TRACKING */
 
 function startTracking() {
 
-    document.getElementById("ballStatus").className =
-    "ball-status detected";
+document.getElementById("ballStatus").className =
+"ball-status detected";
 
-    document.getElementById("ballStatus").textContent =
-    "🟢 Ball tracking started";
+document.getElementById("ballStatus").textContent =
+"🟢 Ball tracking started";
 
-    document.getElementById("collectorMessage").textContent =
-    "Searching for white ping-pong balls... 🏓";
+document.getElementById("collectorMessage").textContent =
+"Searching for white ping-pong balls... 🏓";
+
 }
+
 
 function stopTracking() {
 
-    document.getElementById("ballStatus").className =
-    "ball-status not-detected";
+document.getElementById("ballStatus").className =
+"ball-status not-detected";
 
-    document.getElementById("ballStatus").textContent =
-    "⚪ Tracking stopped";
+document.getElementById("ballStatus").textContent =
+"⚪ Tracking stopped";
 
-    document.getElementById("collectorMessage").textContent =
-    "Ball tracking stopped.";
+document.getElementById("collectorMessage").textContent =
+"Ball tracking stopped.";
+
 }
 
-/* FOLLOW MODE */
+
+/* FOLLOW */
 
 function startFollowing() {
 
-    document.getElementById("followMessage").textContent =
-    "🟢 Following started!";
+document.getElementById("followMessage").textContent =
+"🟢 Following started!";
+
 }
+
 
 function stopFollowing() {
 
-    document.getElementById("followMessage").textContent =
-    "Follow mode stopped.";
+document.getElementById("followMessage").textContent =
+"Follow mode stopped.";
+
 }
+
 
 /* EMERGENCY STOP */
 
 function emergencyStop() {
 
-    stopRobot();
-    stopArm();
-    stopTracking();
-    stopFollowing();
+stopRobot();
 
-    document.getElementById("remoteMessage").textContent =
-    "🛑 EMERGENCY STOP ACTIVATED";
+stopArm();
 
-    console.log("EMERGENCY STOP");
+stopTracking();
+
+stopFollowing();
+
+document.getElementById("remoteMessage").textContent =
+"🛑 EMERGENCY STOP ACTIVATED";
+
+console.log("EMERGENCY STOP");
+
 }
 
 </script>
